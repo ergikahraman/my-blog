@@ -1,0 +1,29 @@
+<!-- base.html ile bağlantı kurmak için extends komutunu kullanıyoruz.-->
+
+{% extends 'pmuyg/base.html' %} 
+
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'cs/style.css' %}" >
+    
+
+{% endblock %}
+
+{% block page_title %} 
+    index başlığı
+{% endblock %}
+
+{% block content %} 
+    
+    <h1>index içeriği</h1>
+    
+    
+    <p class="fs-1">.fs-1 text</p>
+    <p class="fs-2">.fs-2 text</p>
+    <p class="fs-3">.fs-3 text</p>
+    <p class="fs-4">.fs-4 text</p>
+    <p class="fs-5">.fs-5 text</p>
+    <p class="fs-6">.fs-6 text</p>
+
+{% endblock %}
