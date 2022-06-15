@@ -38,5 +38,7 @@ class BirimFiyat (models.Model):
     malzeme = models.ForeignKey(Malzeme, on_delete=models.CASCADE)
     makine = models.ForeignKey(Makine, on_delete=models.CASCADE)
     iscilik = models.ForeignKey(İscilik, on_delete=models.CASCADE)
-    birim = models.OneToOneField(Birim, on_delete=models.CASCADE)
+    birim = models.ForeignKey(Birim, on_delete=models.CASCADE)
+
+    
 # Create your models here.

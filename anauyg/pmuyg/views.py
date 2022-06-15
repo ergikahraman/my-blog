@@ -1,13 +1,25 @@
 from cgitb import html
 from django.http import HttpResponse
 from django.shortcuts import render
+from .models import BirimFiyat
+from django.db.models import Avg # hesaplamalar için yükledik
 
 # Create your views here.
 # işlem yapacak fonksiyonlar oluşturulur bu kısımda
 
 def index (request,):
     # render arcılığı ile html dosyalarında oluşturmuş olduğumuz yapıyı gönderiyoruz
-    return render (request, "index.html")
+    birimfiyat = BirimFiyat.objects.all()
+    toplam = BirimFiyat.objects.all().aggregate(Avg("fiyat"))
+    context = {
+        
+        "birimfiyat": birimfiyat,
+        "toplam" : toplam
+
+
+    }
+
+    return render (request, "index.html", context)
 
 
 

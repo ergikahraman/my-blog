@@ -26,4 +26,27 @@
     <p class="fs-5">.fs-5 text</p>
     <p class="fs-6">.fs-6 text</p>
 
+
+    <div class= "conteiner"> 
+        {% for BirimFiyat in birimfiyat %}
+                        <li>
+                            {{ BirimFiyat.tanım }} - {{ BirimFiyat.fiyat}}
+                        </li>
+                        
+                    {% endfor %}
+        
+        <p>
+            {{toplam.fiyat__avg}} <!-- .fiyat __avg yapınca web sitesinde sadece sayı gözüküyor.-->
+        </p>
+
+
+    </div>
+
+
 {% endblock %}
+
+<!--{% for BirimFiyat in BirimFiyat %}
+                        <li>
+                            {{ BirimFiyat.tanim }} - "a"
+                        </li>
+                    {% endfor %}-->
